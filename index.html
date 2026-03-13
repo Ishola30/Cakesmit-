@@ -3,147 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cakesmit | Premium Cakes</title>
+<title>Cakesmit - Premium Cakes</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
-
-body{
-background:#fff5f8;
-color:#2d1b16;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
+body{
+background:#fff7f8;
+color:#333;
+}
+
+/* NAVBAR */
 nav{
-position:fixed;
-width:100%;
-background:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-z-index:999;
+padding:15px 8%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-font-family:Playfair Display;
-font-size:28px;
-color:#ff6b81;
+font-size:24px;
+font-weight:600;
+color:#e91e63;
 }
 
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#333;
+font-weight:500;
+}
+
+/* HERO */
 .hero{
-height:100vh;
-background:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587') center/cover no-repeat;
+height:85vh;
+background:url("https://images.unsplash.com/photo-1559620192-032c4bc4674e") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-padding:20px;
 }
 
 .hero h1{
-font-family:Playfair Display;
-font-size:50px;
-margin-bottom:20px;
+font-size:48px;
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:10px;
 }
 
-.btn{
-background:#ff6b81;
-padding:14px 30px;
-border-radius:30px;
-color:white;
-text-decoration:none;
-font-weight:600;
-}
-
+/* SECTION */
 section{
-padding:80px 40px;
-max-width:1200px;
-margin:auto;
+padding:60px 8%;
 }
 
-h2{
+.section-title{
 text-align:center;
-font-family:Playfair Display;
-margin-bottom:40px;
+font-size:32px;
+margin-bottom:30px;
+color:#e91e63;
 }
 
-.grid{
+/* CATEGORY */
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.category{
+background:white;
+padding:25px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* GALLERY */
+.gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 }
 
 .card{
 background:white;
-border-radius:15px;
+border-radius:12px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-5px);
 }
 
 .card img{
 width:100%;
-height:250px;
+height:220px;
 object-fit:cover;
 }
 
 .card-content{
-padding:20px;
-text-align:center;
-}
-
-.price{
-color:#ff6b81;
-font-weight:600;
-margin:10px 0;
-}
-
-.order{
-background:#25D366;
-padding:10px 18px;
-border-radius:25px;
-color:white;
-text-decoration:none;
-}
-
-footer{
-background:#2d1b16;
-color:white;
-text-align:center;
-padding:30px;
-}
-
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:16px 18px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:32px;
-}
-
-nav{
 padding:15px;
+text-align:center;
 }
 
+.order-btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#e91e63;
+color:white;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
 }
 
 </style>
@@ -151,63 +147,110 @@ padding:15px;
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
 <div class="logo">Cakesmit</div>
+<div>
+<a href="#">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Order</a>
+</div>
 </nav>
 
-<section class="hero">
-<div>
-<h1>Crafted With Love, Baked To Delight</h1>
+<!-- HERO -->
+<div class="hero">
+<h1>Delicious Cakes For Every Celebration 🎂</h1>
+</div>
 
-<a class="btn" href="https://wa.me/2349063505849?text=Hello%20Cakesmit%20I%20would%20like%20to%20order%20a%20cake">
+<!-- CATEGORIES -->
+<section>
+<h2 class="section-title">Cake Categories</h2>
+
+<div class="categories">
+<div class="category">🎂 Wedding Cakes</div>
+<div class="category">🎉 Birthday Cakes</div>
+<div class="category">🧁 Cupcakes</div>
+<div class="category">💖 Custom Cakes</div>
+<div class="category">🍫 Chocolate Cakes</div>
+<div class="category">👶 Baby Shower Cakes</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2 class="section-title">Our Cake Gallery</h2>
+
+<div class="gallery">
+
+<!-- 30 CAKES -->
+<!-- Just duplicate structure automatically -->
+
+<script>
+const phone="2349063505849";
+
+const images=[
+"https://images.unsplash.com/photo-1535141192574-5d4897c12636",
+"https://images.unsplash.com/photo-1542826438-bd32f43d626f",
+"https://images.unsplash.com/photo-1557925923-cd4648e211a0",
+"https://images.unsplash.com/photo-1464349153735-7db50ed83c84",
+"https://images.unsplash.com/photo-1551024601-bec78aea704b",
+"https://images.unsplash.com/photo-1606313564200-e75d5e30476c",
+"https://images.unsplash.com/photo-1603532648955-039310d9ed75",
+"https://images.unsplash.com/photo-1563729784474-d77dbb933a9e",
+"https://images.unsplash.com/photo-1587241321921-91a834d6d191",
+"https://images.unsplash.com/photo-1621303837174-89787a7d4729",
+"https://images.unsplash.com/photo-1550617931-e17a7b70dce2",
+"https://images.unsplash.com/photo-1605478906891-7a1c3db59bd4",
+"https://images.unsplash.com/photo-1565958011703-44f9829ba187",
+"https://images.unsplash.com/photo-1509440159596-0249088772ff",
+"https://images.unsplash.com/photo-1578985545062-69928b1d9587",
+"https://images.unsplash.com/photo-1541976076758-347942db1978",
+"https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec",
+"https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
+"https://images.unsplash.com/photo-1599785209796-2b2f6f91df09",
+"https://images.unsplash.com/photo-1618424181497-157f25b6ddd5",
+"https://images.unsplash.com/photo-1622467827417-bbe2237067a9",
+"https://images.unsplash.com/photo-1589712235279-7c0e3b8d3d67",
+"https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7",
+"https://images.unsplash.com/photo-1602351447937-745cb720612f",
+"https://images.unsplash.com/photo-1616690710400-a16d146927c5",
+"https://images.unsplash.com/photo-1613145993480-bfbccbe3c9c0",
+"https://images.unsplash.com/photo-1621743478914-cc8a86d7e7b5",
+"https://images.unsplash.com/photo-1562440499-64c9a111f713",
+"https://images.unsplash.com/photo-1601972599720-36938d4ecd31",
+"https://images.unsplash.com/photo-1612203985729-70726954388c"
+];
+
+document.write(images.map((img,i)=>`
+<div class="card">
+<img src="${img}" alt="Cake ${i+1}">
+<div class="card-content">
+<h3>Premium Cake ${i+1}</h3>
+<a class="order-btn"
+href="https://wa.me/${phone}?text=Hello%20I%20want%20to%20order%20Cake%20${i+1}"
+target="_blank">
 Order on WhatsApp
 </a>
+</div>
+</div>
+`).join(""));
+</script>
 
 </div>
 </section>
 
-<section>
-
-<h2>Our Cakes</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1602351447937-745cb720612f">
-<div class="card-content">
-<h3>Chocolate Drip Cake</h3>
-<p class="price">₦25,000</p>
-<a class="order" href="https://wa.me/2349063505849?text=Hello%20Cakesmit%20I%20want%20to%20order%20Chocolate%20Drip%20Cake">Order</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1559622214-0f8a9857c77b">
-<div class="card-content">
-<h3>Birthday Cake</h3>
-<p class="price">₦22,000</p>
-<a class="order" href="https://wa.me/2349063505849?text=Hello%20Cakesmit%20I%20want%20to%20order%20Birthday%20Cake">Order</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f">
-<div class="card-content">
-<h3>Wedding Cake</h3>
-<p class="price">₦80,000</p>
-<a class="order" href="https://wa.me/2349063505849?text=Hello%20Cakesmit%20I%20want%20to%20order%20Wedding%20Cake">Order</a>
-</div>
-</div>
-
-</div>
-
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="section-title">Order Your Cake</h2>
+<p style="text-align:center;">
+Click any cake to order directly via WhatsApp.
+Fast response and custom designs available!
+</p>
 </section>
 
 <footer>
-<p>© 2026 Cakesmit — Crafted With Love</p>
+<p>© 2026 Cakesmit | Made with ❤️</p>
 </footer>
-
-<a class="whatsapp-float" href="https://wa.me/2349063505849">💬</a>
 
 </body>
 </html>
