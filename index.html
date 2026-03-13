@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cakesmit | Premium Cake Store</title>
+<title>Cakesmith | Premium Cake Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
 *{
 margin:0;
 padding:0;
@@ -23,7 +22,6 @@ background:#fff8f9;
 color:#333;
 }
 
-/* NAVBAR */
 header{
 background:white;
 box-shadow:0 2px 15px rgba(0,0,0,.08);
@@ -50,14 +48,8 @@ text-decoration:none;
 margin-left:25px;
 color:#444;
 font-weight:500;
-transition:.3s;
 }
 
-.nav-links a:hover{
-color:#e91e63;
-}
-
-/* HERO */
 .hero{
 height:90vh;
 background:
@@ -68,7 +60,6 @@ justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
-padding:20px;
 }
 
 .hero h1{
@@ -90,7 +81,6 @@ text-decoration:none;
 font-weight:600;
 }
 
-/* SECTION */
 section{
 padding:70px 8%;
 }
@@ -102,7 +92,6 @@ color:#e91e63;
 margin-bottom:40px;
 }
 
-/* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -140,24 +129,20 @@ color:white;
 padding:10px 20px;
 border-radius:25px;
 text-decoration:none;
-font-size:14px;
 }
 
-/* FLOATING WHATSAPP */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 18px;
+padding:14px 20px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
-/* FOOTER */
 footer{
 background:#111;
 color:white;
@@ -165,19 +150,14 @@ text-align:center;
 padding:25px;
 }
 
-@media(max-width:768px){
-.hero h1{font-size:34px;}
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <header>
 <nav>
-<div class="logo">Cakesmit</div>
+<div class="logo">Cakesmith</div>
 <div class="nav-links">
 <a href="#">Home</a>
 <a href="#gallery">Gallery</a>
@@ -186,46 +166,40 @@ padding:25px;
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 <div>
 <h1>Beautiful Cakes For Every Occasion</h1>
-<p>Wedding • Birthday • Cupcakes • Custom Designs</p>
+<p>Wedding • Birthday • Cupcakes • Custom Cakes</p>
 <a href="#gallery">View Cakes</a>
 </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
+
 <h2 class="section-title">Cake Gallery</h2>
 
 <div class="gallery" id="galleryContainer"></div>
 
 </section>
 
-<!-- ORDER -->
 <section id="order">
-<h2 class="section-title">Order via WhatsApp</h2>
-<p style="text-align:center;">
-Select any cake and order instantly through WhatsApp.
-Fast replies guaranteed.
-</p>
+<h2 class="section-title">Order Your Cake</h2>
+<p style="text-align:center;">Click any cake to order instantly via WhatsApp.</p>
 </section>
 
 <footer>
-<p>© 2026 Cakesmit — Premium Cake Store</p>
+<p>© 2026 Cakesmith</p>
 </footer>
 
-<!-- FLOAT BUTTON -->
 <a class="whatsapp-float"
-href="https://api.whatsapp.com/send?phone=2349063505849&text=Hello%20Cakesmit%20I%20want%20to%20order%20a%20cake"
+href="https://api.whatsapp.com/send?phone=2348137009101&text=Hello%20I%20want%20to%20order%20a%20cake"
 target="_blank">
 WhatsApp
 </a>
 
 <script>
 
-const phone="2349063505849";
+const phone="2348137009101";
 
 const images=[
 "https://images.unsplash.com/photo-1535141192574-5d4897c12636",
@@ -267,11 +241,11 @@ container.innerHTML+=`
 <div class="card">
 <img src="${img}" alt="Cake ${i+1}">
 <div class="card-content">
-<h3>Premium Cake ${i+1}</h3>
+<h3>Premium Cake</h3>
 <a class="order-btn"
-href="https://api.whatsapp.com/send?phone=${phone}&text=Hello%20I%20want%20Cake%20${i+1}"
+href="https://api.whatsapp.com/send?phone=${phone}&text=Hello%20I%20want%20to%20order%20a%20cake"
 target="_blank">
-Order via WhatsApp
+Order Cake
 </a>
 </div>
 </div>`;
