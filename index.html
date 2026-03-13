@@ -3,35 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cakesmit - Premium Cakes</title>
+<title>Cakesmit | Premium Cake Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
+/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#fff7f8;
+background:#fff8f9;
 color:#333;
 }
 
 /* NAVBAR */
+header{
+background:white;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 8%;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-position:sticky;
-top:0;
-z-index:1000;
 }
 
 .logo{
@@ -40,97 +45,116 @@ font-weight:600;
 color:#e91e63;
 }
 
-nav a{
+.nav-links a{
 text-decoration:none;
-margin-left:20px;
-color:#333;
+margin-left:25px;
+color:#444;
 font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#e91e63;
 }
 
 /* HERO */
 .hero{
-height:85vh;
-background:url("https://images.unsplash.com/photo-1559620192-032c4bc4674e") center/cover;
+height:90vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1559620192-032c4bc4674e") center/cover;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 color:white;
+padding:20px;
 }
 
 .hero h1{
-font-size:48px;
-background:rgba(0,0,0,0.5);
-padding:20px;
-border-radius:10px;
+font-size:52px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.hero a{
+background:#e91e63;
+padding:14px 28px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:600;
 }
 
 /* SECTION */
 section{
-padding:60px 8%;
+padding:70px 8%;
 }
 
 .section-title{
 text-align:center;
-font-size:32px;
-margin-bottom:30px;
+font-size:34px;
 color:#e91e63;
-}
-
-/* CATEGORY */
-.categories{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.category{
-background:white;
-padding:25px;
-border-radius:12px;
-text-align:center;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
+margin-bottom:40px;
 }
 
 /* GALLERY */
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .card{
 background:white;
-border-radius:12px;
+border-radius:15px;
 overflow:hidden;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+box-shadow:0 5px 18px rgba(0,0,0,.1);
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 }
 
 .card img{
 width:100%;
-height:220px;
+height:230px;
 object-fit:cover;
 }
 
 .card-content{
-padding:15px;
+padding:18px;
 text-align:center;
 }
 
 .order-btn{
 display:inline-block;
 margin-top:10px;
-padding:10px 18px;
 background:#e91e63;
 color:white;
+padding:10px 20px;
 border-radius:25px;
 text-decoration:none;
 font-size:14px;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
 /* FOOTER */
@@ -139,7 +163,10 @@ background:#111;
 color:white;
 text-align:center;
 padding:25px;
-margin-top:40px;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:34px;}
 }
 
 </style>
@@ -148,44 +175,56 @@ margin-top:40px;
 <body>
 
 <!-- NAVBAR -->
+<header>
 <nav>
 <div class="logo">Cakesmit</div>
-<div>
+<div class="nav-links">
 <a href="#">Home</a>
 <a href="#gallery">Gallery</a>
-<a href="#contact">Order</a>
+<a href="#order">Order</a>
 </div>
 </nav>
+</header>
 
 <!-- HERO -->
-<div class="hero">
-<h1>Delicious Cakes For Every Celebration 🎂</h1>
-</div>
-
-<!-- CATEGORIES -->
-<section>
-<h2 class="section-title">Cake Categories</h2>
-
-<div class="categories">
-<div class="category">🎂 Wedding Cakes</div>
-<div class="category">🎉 Birthday Cakes</div>
-<div class="category">🧁 Cupcakes</div>
-<div class="category">💖 Custom Cakes</div>
-<div class="category">🍫 Chocolate Cakes</div>
-<div class="category">👶 Baby Shower Cakes</div>
+<section class="hero">
+<div>
+<h1>Beautiful Cakes For Every Occasion</h1>
+<p>Wedding • Birthday • Cupcakes • Custom Designs</p>
+<a href="#gallery">View Cakes</a>
 </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
-<h2 class="section-title">Our Cake Gallery</h2>
+<h2 class="section-title">Cake Gallery</h2>
 
-<div class="gallery">
+<div class="gallery" id="galleryContainer"></div>
 
-<!-- 30 CAKES -->
-<!-- Just duplicate structure automatically -->
+</section>
+
+<!-- ORDER -->
+<section id="order">
+<h2 class="section-title">Order via WhatsApp</h2>
+<p style="text-align:center;">
+Select any cake and order instantly through WhatsApp.
+Fast replies guaranteed.
+</p>
+</section>
+
+<footer>
+<p>© 2026 Cakesmit — Premium Cake Store</p>
+</footer>
+
+<!-- FLOAT BUTTON -->
+<a class="whatsapp-float"
+href="https://api.whatsapp.com/send?phone=2349063505849&text=Hello%20Cakesmit%20I%20want%20to%20order%20a%20cake"
+target="_blank">
+WhatsApp
+</a>
 
 <script>
+
 const phone="2349063505849";
 
 const images=[
@@ -221,36 +260,24 @@ const images=[
 "https://images.unsplash.com/photo-1612203985729-70726954388c"
 ];
 
-document.write(images.map((img,i)=>`
+const container=document.getElementById("galleryContainer");
+
+images.forEach((img,i)=>{
+container.innerHTML+=`
 <div class="card">
 <img src="${img}" alt="Cake ${i+1}">
 <div class="card-content">
 <h3>Premium Cake ${i+1}</h3>
 <a class="order-btn"
-href="https://wa.me/${phone}?text=Hello%20I%20want%20to%20order%20Cake%20${i+1}"
+href="https://api.whatsapp.com/send?phone=${phone}&text=Hello%20I%20want%20Cake%20${i+1}"
 target="_blank">
-Order on WhatsApp
+Order via WhatsApp
 </a>
 </div>
-</div>
-`).join(""));
+</div>`;
+});
+
 </script>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="section-title">Order Your Cake</h2>
-<p style="text-align:center;">
-Click any cake to order directly via WhatsApp.
-Fast response and custom designs available!
-</p>
-</section>
-
-<footer>
-<p>© 2026 Cakesmit | Made with ❤️</p>
-</footer>
 
 </body>
 </html>
