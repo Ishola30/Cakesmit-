@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Cakesmith — Luxury Cake Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= DESIGN TOKENS ================= */
+/* ---------------- GLOBAL DESIGN SYSTEM ---------------- */
 
 :root{
---dark:#111;
---text:#444;
+--primary:#111;
 --accent:#b76e79;
 --bg:#fafafa;
---radius:18px;
+--text:#444;
+--radius:20px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 font-family:Poppins,sans-serif;
 background:var(--bg);
 color:var(--text);
+line-height:1.7;
+overflow-x:hidden;
 }
 
-/* SCROLL PROGRESS BAR */
+/* ---------------- SCROLL PROGRESS ---------------- */
 
 .progress{
 position:fixed;
 top:0;
 left:0;
 height:3px;
-background:var(--accent);
 width:0%;
+background:var(--accent);
 z-index:2000;
 }
 
-/* NAVBAR */
+/* ---------------- NAVBAR ---------------- */
 
 nav{
 position:fixed;
+top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 8%;
 background:rgba(255,255,255,.75);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 z-index:1000;
 }
 
 .logo{
 font-family:"Playfair Display",serif;
 font-size:26px;
-color:var(--dark);
+color:var(--primary);
 }
 
 .menu{
@@ -71,26 +75,26 @@ list-style:none;
 
 .menu a{
 text-decoration:none;
-color:var(--dark);
+color:var(--primary);
 font-weight:500;
 }
 
 .cta{
-background:var(--dark);
+background:var(--primary);
 color:white;
 padding:12px 26px;
 border-radius:40px;
 text-decoration:none;
 }
 
-/* HERO */
+/* ---------------- HERO ---------------- */
 
 .hero{
 min-height:100vh;
 display:grid;
-grid-template-columns:1.1fr 1fr;
+grid-template-columns:1fr 1fr;
 align-items:center;
-padding:130px 8% 80px;
+padding:130px 8%;
 gap:60px;
 }
 
@@ -99,7 +103,7 @@ font-family:"Playfair Display",serif;
 font-size:64px;
 line-height:1.1;
 margin-bottom:20px;
-color:var(--dark);
+color:var(--primary);
 }
 
 .hero p{
@@ -115,24 +119,24 @@ transition:1s;
 }
 
 .hero img:hover{
-transform:scale(1.04);
+transform:scale(1.05);
 }
 
-/* SECTION */
+/* ---------------- SECTION ---------------- */
 
 section{
-padding:110px 8%;
+padding:120px 8%;
 }
 
 .title{
 text-align:center;
 font-family:"Playfair Display",serif;
-font-size:42px;
-margin-bottom:60px;
-color:var(--dark);
+font-size:44px;
+margin-bottom:70px;
+color:var(--primary);
 }
 
-/* GRID */
+/* ---------------- GRID ---------------- */
 
 .grid{
 display:grid;
@@ -144,11 +148,10 @@ gap:35px;
 background:white;
 border-radius:var(--radius);
 overflow:hidden;
-box-shadow:0 15px 35px rgba(0,0,0,.06);
-transition:.6s;
-cursor:pointer;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transform:translateY(50px);
 opacity:0;
-transform:translateY(60px);
+transition:0.8s;
 }
 
 .card.show{
@@ -160,7 +163,7 @@ transform:translateY(0);
 width:100%;
 height:260px;
 object-fit:cover;
-transition:.6s;
+transition:0.6s;
 }
 
 .card:hover img{
@@ -173,15 +176,16 @@ text-align:center;
 }
 
 .order{
-background:var(--dark);
-color:white;
+margin-top:12px;
 border:none;
+background:var(--primary);
+color:white;
 padding:10px 24px;
 border-radius:30px;
 cursor:pointer;
 }
 
-/* FEATURE STRIP */
+/* ---------------- FEATURES ---------------- */
 
 .features{
 display:grid;
@@ -194,18 +198,34 @@ text-align:center;
 background:white;
 padding:40px;
 border-radius:var(--radius);
-box-shadow:0 15px 35px rgba(0,0,0,.05);
+box-shadow:0 15px 35px rgba(0,0,0,.06);
 }
 
-/* LIGHTBOX */
+/* ---------------- PARALLAX SECTION ---------------- */
+
+.parallax{
+height:70vh;
+background-image:url("https://images.unsplash.com/photo-1578985545062-69928b1d9587");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:40px;
+font-family:"Playfair Display",serif;
+}
+
+/* ---------------- LIGHTBOX ---------------- */
 
 .lightbox{
 position:fixed;
 inset:0;
 background:rgba(0,0,0,.9);
 display:none;
-justify-content:center;
 align-items:center;
+justify-content:center;
 z-index:3000;
 }
 
@@ -215,16 +235,16 @@ max-height:90%;
 border-radius:12px;
 }
 
-/* FOOTER */
+/* ---------------- FOOTER ---------------- */
 
 footer{
-background:var(--dark);
+background:var(--primary);
 color:white;
 text-align:center;
 padding:60px;
 }
 
-/* FLOAT WHATSAPP */
+/* ---------------- FLOAT WHATSAPP ---------------- */
 
 .whatsapp{
 position:fixed;
@@ -239,7 +259,7 @@ text-decoration:none;
 box-shadow:0 12px 25px rgba(0,0,0,.3);
 }
 
-/* RESPONSIVE */
+/* ---------------- RESPONSIVE ---------------- */
 
 @media(max-width:900px){
 
@@ -248,9 +268,13 @@ grid-template-columns:1fr;
 text-align:center;
 }
 
-.hero h1{font-size:38px;}
+.hero h1{
+font-size:40px;
+}
 
-.menu{display:none;}
+.menu{
+display:none;
+}
 
 }
 
@@ -270,23 +294,22 @@ text-align:center;
 <li><a href="#about">Studio</a></li>
 </ul>
 
-<a class="cta"
-href="https://wa.me/2348137009101?text=hello%20I%20want%20to%20order%20a%20cake">
-Order
-</a>
+<a class="cta" href="https://wa.me/2348137009101?text=hello%20I%20want%20to%20order%20a%20cake">Order</a>
 </nav>
 
 <section class="hero">
 
 <div>
-<h1>Timeless Cakes Crafted With Modern Luxury</h1>
+<h1>Luxury Cakes Crafted With Timeless Elegance</h1>
+
 <p>
-Cakesmith creates elegant celebration cakes designed with refined artistry and premium ingredients.
+A modern cake studio creating elegant wedding and celebration cakes.
 </p>
-<a class="cta"
-href="https://wa.me/2348137009101?text=hello%20I%20want%20to%20order%20a%20cake">
+
+<a class="cta" href="https://wa.me/2348137009101?text=hello%20I%20want%20to%20order%20a%20cake">
 Order via WhatsApp
 </a>
+
 </div>
 
 <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
@@ -301,25 +324,28 @@ Order via WhatsApp
 
 </section>
 
+<div class="parallax">
+Crafted With Perfection
+</div>
+
 <section id="about">
 
 <h2 class="title">The Cakesmith Experience</h2>
 
 <div class="features">
 <div>Luxury handcrafted cakes.</div>
-<div>Personalized celebration designs.</div>
-<div>Fast WhatsApp consultation.</div>
-<div>Trusted premium quality.</div>
+<div>Elegant celebration designs.</div>
+<div>Direct WhatsApp consultation.</div>
+<div>Premium quality ingredients.</div>
 </div>
 
 </section>
 
 <footer>
-<p>© 2026 Cakesmith — Luxury Cake Studio</p>
+<p>© 2026 Cakesmith</p>
 </footer>
 
-<a class="whatsapp"
-href="https://wa.me/2348137009101?text=hello%20I%20want%20to%20order%20a%20cake">💬</a>
+<a class="whatsapp" href="https://wa.me/2348137009101?text=hello%20I%20want%20to%20order%20a%20cake">💬</a>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
 <img id="lightImg">
@@ -327,15 +353,15 @@ href="https://wa.me/2348137009101?text=hello%20I%20want%20to%20order%20a%20cake"
 
 <script>
 
-/* SCROLL PROGRESS */
+/* scroll progress */
 
 window.addEventListener("scroll",()=>{
-const winScroll=document.documentElement.scrollTop;
+const scrollTop=document.documentElement.scrollTop;
 const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-document.getElementById("progress").style.width=(winScroll/height)*100+"%";
+document.getElementById("progress").style.width=(scrollTop/height)*100+"%";
 });
 
-/* CAKES */
+/* gallery */
 
 const cakes=[
 "https://images.unsplash.com/photo-1559622214-f8a9850965bb",
@@ -362,11 +388,13 @@ grid.innerHTML+=`
 </div>`;
 });
 
-/* REVEAL ANIMATION */
+/* reveal animation */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
-if(e.isIntersecting) e.target.classList.add("show");
+if(e.isIntersecting){
+e.target.classList.add("show");
+}
 });
 });
 
@@ -374,7 +402,7 @@ setTimeout(()=>{
 document.querySelectorAll(".card").forEach(el=>observer.observe(el));
 },300);
 
-/* LIGHTBOX */
+/* lightbox */
 
 function openLightbox(src){
 document.getElementById("lightbox").style.display="flex";
@@ -385,12 +413,13 @@ function closeLightbox(){
 document.getElementById("lightbox").style.display="none";
 }
 
-/* WHATSAPP ORDER */
+/* whatsapp */
 
 function order(){
 window.open(
 "https://wa.me/2348137009101?text=hello%20I%20want%20to%20order%20a%20cake",
-"_blank");
+"_blank"
+);
 }
 
 </script>
