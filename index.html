@@ -5,11 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cakesmith | Premium Cakes</title>
+<title>Cakesmith | Patisserie Cakes</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* ---------- GLOBAL STYLE ---------- */
 
 *{
 margin:0;
@@ -20,15 +22,15 @@ scroll-behavior:smooth;
 
 body{
 font-family:Poppins;
-background:#fff7f8;
+background:#f7ecec;
 color:#333;
 }
 
-/* NAVBAR */
+/* ---------- NAVBAR ---------- */
 
 header{
-background:white;
-box-shadow:0 3px 15px rgba(0,0,0,0.05);
+background:#f3d9dc;
+padding:15px 8%;
 position:sticky;
 top:0;
 z-index:1000;
@@ -38,68 +40,68 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 8%;
 }
 
 .logo{
 font-family:"Playfair Display";
-font-size:28px;
-color:#e91e63;
+font-size:32px;
+color:#3d2b2f;
 }
 
 .nav-links a{
 margin-left:30px;
 text-decoration:none;
-color:#444;
+color:#3d2b2f;
 font-weight:500;
-transition:.3s;
 }
 
-.nav-links a:hover{
-color:#e91e63;
-}
-
-/* HERO */
+/* ---------- HERO ---------- */
 
 .hero{
 height:90vh;
 background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("https://images.unsplash.com/photo-1559620192-032c4bc4674e") center/cover;
+url("https://images.unsplash.com/photo-1559620192-032c4bc4674e") center/cover no-repeat;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-color:white;
-padding:20px;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(255,235,238,.65);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 }
 
 .hero h1{
 font-family:"Playfair Display";
-font-size:52px;
+font-size:56px;
+color:#3d2b2f;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:18px;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 .hero a{
-background:#e91e63;
+background:#d48a93;
 padding:14px 34px;
-border-radius:40px;
-color:white;
+border-radius:30px;
 text-decoration:none;
+color:white;
 font-weight:500;
-transition:.3s;
 }
 
-.hero a:hover{
-background:#c2185b;
-}
-
-/* SECTION */
+/* ---------- SECTION ---------- */
 
 section{
 padding:80px 8%;
@@ -107,15 +109,15 @@ padding:80px 8%;
 
 .section-title{
 text-align:center;
-font-size:36px;
 font-family:"Playfair Display";
+font-size:40px;
 margin-bottom:50px;
-color:#e91e63;
+color:#3d2b2f;
 }
 
-/* GALLERY */
+/* ---------- SIGNATURE CARDS ---------- */
 
-.gallery{
+.signature{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
@@ -123,9 +125,9 @@ gap:30px;
 
 .card{
 background:white;
-border-radius:16px;
+border-radius:18px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 transition:.3s;
 }
 
@@ -135,7 +137,7 @@ transform:translateY(-8px);
 
 .card img{
 width:100%;
-height:240px;
+height:260px;
 object-fit:cover;
 }
 
@@ -145,125 +147,105 @@ text-align:center;
 }
 
 .card-content h3{
+font-family:"Playfair Display";
 margin-bottom:10px;
-font-size:18px;
 }
 
 .order-btn{
 display:inline-block;
 margin-top:10px;
-background:#e91e63;
+background:#d48a93;
 color:white;
-padding:10px 22px;
+padding:10px 24px;
 border-radius:25px;
 text-decoration:none;
-font-size:14px;
 }
 
-.order-btn:hover{
-background:#c2185b;
-}
+/* ---------- WHATSAPP FLOAT ---------- */
 
-/* WHATSAPP FLOAT */
-
-.whatsapp-float{
+.whatsapp{
 position:fixed;
 bottom:25px;
 right:25px;
 background:#25D366;
 color:white;
 padding:14px 20px;
-border-radius:50px;
+border-radius:40px;
 text-decoration:none;
 font-weight:500;
-box-shadow:0 6px 18px rgba(0,0,0,.25);
+box-shadow:0 6px 18px rgba(0,0,0,.3);
 }
 
-/* FOOTER */
+/* ---------- FOOTER ---------- */
 
 footer{
-background:#111;
+background:#3d2b2f;
 color:white;
 text-align:center;
 padding:30px;
-margin-top:40px;
 }
 
-/* MOBILE */
+/* ---------- MOBILE ---------- */
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:34px;
-}
-
-.nav-links a{
-margin-left:15px;
+font-size:36px;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-
 <nav>
-
 <div class="logo">Cakesmith</div>
 
 <div class="nav-links">
 <a href="#">Home</a>
-<a href="#gallery">Gallery</a>
+<a href="#gallery">Cakes</a>
 <a href="#order">Order</a>
 </div>
-
 </nav>
-
 </header>
 
+<!-- HERO -->
 <section class="hero">
-
-<div>
-
-<h1>Luxury Cakes For Every Celebration</h1>
-
-<p>Wedding • Birthday • Cupcakes • Custom Cakes</p>
-
-<a href="#gallery">Browse Cakes</a>
-
+<div class="hero-content">
+<h1>Delight in Every Bite</h1>
+<p>Luxury Cakes • Elegant Designs • Made With Love</p>
+<a href="#gallery">Order Now</a>
 </div>
-
 </section>
 
+<!-- GALLERY -->
 <section id="gallery">
 
-<h2 class="section-title">Cake Gallery</h2>
+<h2 class="section-title">Signature Cakes</h2>
 
-<div class="gallery" id="galleryContainer"></div>
+<div class="signature" id="galleryContainer"></div>
 
 </section>
 
+<!-- ORDER -->
 <section id="order">
 
-<h2 class="section-title">Order Your Cake</h2>
+<h2 class="section-title">Order via WhatsApp</h2>
 
 <p style="text-align:center;">
-Click any cake to order instantly via WhatsApp
+Click any cake to place your order instantly.
 </p>
 
 </section>
 
 <footer>
-
-<p>© 2026 Cakesmith Premium Cakes</p>
-
+<p>© 2026 Cakesmith Patisserie</p>
 </footer>
 
-<a class="whatsapp-float"
+<a class="whatsapp"
 href="https://api.whatsapp.com/send?phone=2348137009101&text=Hello%20I%20want%20to%20order%20a%20cake"
 target="_blank">
 WhatsApp
@@ -280,36 +262,29 @@ const images=[
 "https://images.unsplash.com/photo-1542826438-bd32f43d626f",
 "https://images.unsplash.com/photo-1578985545062-69928b1d9587",
 "https://images.unsplash.com/photo-1606313564200-e75d5e30476c",
-"https://images.unsplash.com/photo-1559622214-0f8a9857c77b",
 "https://images.unsplash.com/photo-1602351447937-745cb720612f",
-"https://images.unsplash.com/photo-1612203985729-70726954388c",
 "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e",
-"https://images.unsplash.com/photo-1557925923-cd4648e211a0"
+"https://images.unsplash.com/photo-1557925923-cd4648e211a0",
+"https://images.unsplash.com/photo-1612203985729-70726954388c"
 
 ];
 
 const container=document.getElementById("galleryContainer");
 
-images.forEach((img)=>{
+images.forEach(img=>{
 
 container.innerHTML+=`
 
 <div class="card">
-
 <img src="${img}" alt="Cake">
-
 <div class="card-content">
-
-<h3>Premium Cake</h3>
-
+<h3>Signature Cake</h3>
 <a class="order-btn"
 href="https://api.whatsapp.com/send?phone=${phone}&text=Hello%20I%20want%20to%20order%20a%20cake"
 target="_blank">
 Order Cake
 </a>
-
 </div>
-
 </div>
 
 `;
