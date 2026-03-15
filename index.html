@@ -1,360 +1,344 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Cakesmith | Luxury Cakes</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"><style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cakesmith | Luxury Cakes</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:Poppins;
-background:#faf7f2;
-color:#333;
-line-height:1.6;
+font-family:'Poppins',sans-serif;
+background:#faf8f6;
+color:#222;
 }
 
 /* NAVBAR */
-
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 8%;
-background:rgba(255,255,255,.75);
-backdrop-filter:blur(10px);
+padding:16px 8%;
+background:white;
 position:sticky;
 top:0;
-z-index:999;
-border-bottom:1px solid rgba(0,0,0,.05);
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
 
+/* TEXT LOGO */
 .logo{
-font-family:"Playfair Display";
-font-size:26px;
-font-weight:600;
+font-family:'Playfair Display',serif;
+font-size:28px;
+font-weight:700;
 letter-spacing:1px;
+color:#111;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
 }
 
 nav a{
-margin-left:25px;
 text-decoration:none;
-color:#444;
+color:#333;
 font-weight:500;
 }
 
-/* HERO */
-
+/* HERO (SMALLER + MOBILE PERFECT) */
 .hero{
-height:85vh;
-background:url("https://images.unsplash.com/photo-1559620192-032c4bc4674e?q=80&w=1974") center/cover;
+height:70vh;
+min-height:420px;
+background:url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1600") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+padding:20px;
 }
 
-.hero-box{
-background:rgba(0,0,0,.45);
-padding:40px 50px;
-border-radius:10px;
-color:white;
+.hero-content{
+background:rgba(255,255,255,.85);
+padding:35px 30px;
+border-radius:12px;
 max-width:600px;
 }
 
 .hero h1{
-font-family:"Playfair Display";
-font-size:46px;
+font-family:'Playfair Display',serif;
+font-size:38px;
 margin-bottom:10px;
 }
 
 .hero p{
-opacity:.9;
+font-size:15px;
+margin-bottom:18px;
+color:#555;
+}
+
+.btn{
+background:#111;
+color:white;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+display:inline-block;
 }
 
 /* SECTIONS */
-
-.section{
-padding:100px 8%;
-position:relative;
-opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
-}
-
-.section.active{
-opacity:1;
-transform:translateY(0);
-}
-
-.section::after{
-content:"";
-width:60px;
-height:3px;
-background:#8c5a3c;
-display:block;
-margin:40px auto 0;
-border-radius:5px;
-opacity:.4;
-}
-
-.section h2{
+section{
+padding:70px 8%;
 text-align:center;
-font-family:"Playfair Display";
-font-size:34px;
-margin-bottom:40px;
 }
 
-/* PRICE BOX */
+h2{
+font-family:'Playfair Display',serif;
+font-size:32px;
+margin-bottom:15px;
+}
 
-.price-box{
-background:white;
-padding:35px;
-max-width:700px;
+/* ABOUT */
+.about{
+max-width:750px;
 margin:auto;
-border-radius:10px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-line-height:2;
+color:#555;
+line-height:1.7;
 }
 
 /* GALLERY */
-
-.gallery{
+.gallery-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
+margin-top:35px;
 }
 
-.cake{
+.card{
 background:white;
 border-radius:12px;
 overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
+box-shadow:0 6px 18px rgba(0,0,0,.06);
 transition:.3s;
-cursor:pointer;
 }
 
-.cake img{
-width:100%;
-height:260px;
-object-fit:cover;
-transition:transform .6s ease;
-}
-
-.cake:hover img{
-transform:scale(1.08);
-}
-
-.cake:hover{
+.card:hover{
 transform:translateY(-6px);
-box-shadow:0 15px 30px rgba(0,0,0,.12);
 }
 
-.cake-info{
-padding:18px;
-text-align:center;
-}
-
-.cake-info h4{
-margin-bottom:10px;
-}
-
-button{
-background:#8c5a3c;
-color:white;
-border:none;
-padding:10px 18px;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{
-background:#6f462d;
-}
-
-/* MODAL */
-
-.modal{
-position:fixed;
-top:0;
-left:0;
+.card img{
 width:100%;
-height:100%;
-background:rgba(0,0,0,.6);
-display:none;
-align-items:center;
-justify-content:center;
+height:230px;
+object-fit:cover;
 }
 
-.modal-content{
-background:white;
-padding:30px;
+.card h3{
+margin:12px 0;
+font-family:'Playfair Display',serif;
+}
+
+.order-btn{
+margin-bottom:18px;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+background:#fff;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.testimonial{
+background:#faf8f6;
+padding:25px;
 border-radius:10px;
-width:90%;
-max-width:420px;
+font-size:14px;
 }
 
-.modal select,
-.modal textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:5px;
+.testimonial strong{
+display:block;
+margin-top:10px;
 }
 
 /* FOOTER */
-
 footer{
 background:#111;
 color:white;
 text-align:center;
-padding:40px;
-margin-top:70px;
-}
-
-footer h3{
-font-family:Playfair Display;
-margin-bottom:10px;
+padding:25px;
+margin-top:50px;
 }
 
 /* MOBILE */
-
 @media(max-width:768px){
 
 .hero h1{
 font-size:28px;
 }
 
-.hero-box{
-padding:25px;
+nav ul{
+gap:15px;
+font-size:14px;
 }
 
 }
 
-</style></head><body><nav>
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
 <div class="logo">Cakesmith</div>
-<div>
-<a href="#">Home</a>
-<a href="#gallery">Gallery</a>
-<a href="#prices">Prices</a>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#order">Order</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>Luxury Cakes Crafted With Passion</h1>
+<p>Wedding • Birthday • Cupcakes • Custom Designs</p>
+<a href="#gallery" class="btn">View Cakes</a>
 </div>
-</nav><section class="hero"><div class="hero-box">
-<h1>Luxury Cakes Crafted For Special Moments</h1>
-<p>Wedding, Birthday & Custom Cakes made with care and creativity.</p>
-</div></section><section id="prices" class="section"><h2>Price Guide</h2><div class="price-box">Wedding Cakes — ₦50,000 and above<br>
-Birthday Cakes — ₦30,000 and above<br>
-Cupcakes — ₦7,000<br>
-Customized Cakes — ₦55,000 and above<br><br>
+</section>
 
-<b>Note:</b> Price depends on cake size and design.<br>
-We offer both <b>Home Delivery</b> and <b>Pickup</b>.
+<!-- ABOUT -->
+<section id="about">
+<h2>About Cakesmith</h2>
+<p class="about">
+Cakesmith creates premium handcrafted cakes designed for unforgettable moments.
+Our cakes are made with high-quality ingredients and artistic precision.
+We offer both delivery and pickup services, with pricing based on cake size and customization.
+</p>
+</section>
 
-</div></section><section id="gallery" class="section"><h2>Our Cakes</h2><div class="gallery" id="cakeGallery"></div></section><div class="modal" id="orderModal"><div class="modal-content"><h3 id="cakeTitle"></h3><label>Select Size</label>
+<!-- GALLERY (6 CLEAN PROFESSIONAL IMAGES) -->
+<section id="gallery">
+<h2>Our Cakes</h2>
 
-<select id="size">
-<option>Small</option>
-<option>Medium</option>
-<option>Large</option>
-</select><label>Delivery Option</label>
+<div class="gallery-grid">
 
-<select id="delivery">
-<option>Home Delivery</option>
-<option>Pickup</option>
-</select><label>Describe Your Design</label>
-
-<textarea id="design"></textarea><button onclick="sendOrder()">Order via WhatsApp</button>
-
-</div></div><footer><h3>Cakesmith</h3><p>Luxury cakes for weddings, birthdays & special moments.</p><p style="opacity:.7;margin-top:10px;">
-Delivery & Pickup Available • Lagos, Nigeria
-</p><p style="margin-top:15px;font-size:14px;opacity:.6;">
-© 2026 Cakesmith
-</p></footer><script>
-
-const cakes=[
-
-["Wedding Cake","https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=800"],
-["Birthday Cake","https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=800"],
-["Cupcakes","https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800"],
-["Customized Cake","https://images.unsplash.com/photo-1607478900766-efe13248b125?w=800"],
-["Wedding Cake","https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800"],
-["Birthday Cake","https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800"],
-["Cupcakes","https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=800"],
-["Customized Cake","https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800"],
-["Wedding Cake","https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800"]
-
-];
-
-const gallery=document.getElementById("cakeGallery");
-
-cakes.forEach(c=>{
-gallery.innerHTML+=`
-
-<div class="cake" onclick="openOrder('${c[0]}')">
-
-<img src="${c[1]}" loading="lazy">
-
-<div class="cake-info">
-
-<h4>${c[0]}</h4>
-
-<button>Order</button>
-
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=1200">
+<h3>Wedding Cake — ₦50k+</h3>
+<button class="btn order-btn" onclick="orderCake('Wedding Cake')">Order</button>
 </div>
 
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?q=80&w=1200">
+<h3>Birthday Cake — ₦30k+</h3>
+<button class="btn order-btn" onclick="orderCake('Birthday Cake')">Order</button>
 </div>
 
-`;
-});
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?q=80&w=1200">
+<h3>Cupcakes — ₦7k</h3>
+<button class="btn order-btn" onclick="orderCake('Cupcakes')">Order</button>
+</div>
 
-let selectedCake="";
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=1200">
+<h3>Custom Cake — ₦55k+</h3>
+<button class="btn order-btn" onclick="orderCake('Custom Cake')">Order</button>
+</div>
 
-function openOrder(type){
-selectedCake=type;
-document.getElementById("cakeTitle").innerText=type;
-document.getElementById("orderModal").style.display="flex";
-}
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1559628233-d5b3bd7c04b6?q=80&w=1200">
+<h3>Luxury Cake Design</h3>
+<button class="btn order-btn" onclick="orderCake('Luxury Cake')">Order</button>
+</div>
 
-function sendOrder(){
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200">
+<h3>Celebration Cake</h3>
+<button class="btn order-btn" onclick="orderCake('Celebration Cake')">Order</button>
+</div>
 
-const size=document.getElementById("size").value;
-const delivery=document.getElementById("delivery").value;
-const design=document.getElementById("design").value || "Not specified";
+</div>
+</section>
 
-const message=
-`Hello Cakesmith,
-I want to order a ${selectedCake}.
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+<h2>Customer Reviews</h2>
 
+<div class="testimonial-grid">
+
+<div class="testimonial">
+“The wedding cake was stunning and tasted amazing!”
+<strong>— Amina</strong>
+</div>
+
+<div class="testimonial">
+“Best cake experience ever. Delivery was perfect.”
+<strong>— David</strong>
+</div>
+
+<div class="testimonial">
+“Professional service and beautiful designs.”
+<strong>— Chioma</strong>
+</div>
+
+</div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+<h2>Order Information</h2>
+<p>Price depends on cake size. We offer delivery and pickup.</p>
+</section>
+
+<footer>
+<p>© 2026 Cakesmith — Luxury Cake Studio</p>
+</footer>
+
+<script>
+
+function orderCake(type){
+
+let size = prompt("Choose size: Small, Medium, Large");
+if(!size) return;
+
+let delivery = prompt("Delivery or Pickup?");
+if(!delivery) return;
+
+let design = prompt("Describe your cake design");
+
+let message =
+`Hello Cakesmith, I want to order a ${type}.
 Size: ${size}
-Order Type: ${delivery}
+Option: ${delivery}
 Design: ${design}`;
 
-window.open(
-"https://wa.me/2348137009101?text="+encodeURIComponent(message),
-"_blank"
-);
+let url =
+"https://wa.me/2348137009101?text=" +
+encodeURIComponent(message);
+
+window.open(url,"_blank");
 }
 
-window.onclick=function(e){
-if(e.target.id==="orderModal"){
-orderModal.style.display="none";
-}
-};
+</script>
 
-/* SCROLL ANIMATION */
-
-const sections=document.querySelectorAll(".section");
-
-window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-const top=sec.getBoundingClientRect().top;
-if(top < window.innerHeight-100){
-sec.classList.add("active");
-}
-});
-});
-
-</script></body>
+</body>
 </html>
